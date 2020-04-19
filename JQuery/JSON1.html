@@ -14,12 +14,16 @@ src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
  ]
  }
  };
+  prac = jQuery.map(d.Pracownicy.Pracownik, function(val, i){
+		val.set = d[val.set];
+		return ('<div>' + val.Imie + ' ' +
+		val.Nazwisko + '</div>');
+	 });
+ 
  $(function () {
- for (var i = 0; i < d.Pracownicy.Pracownik.length; i++) {
- $('#x').append('<div>' + d.Pracownicy.Pracownik[i].Imie + ' ' +
-d.Pracownicy.Pracownik[i].Nazwisko + '</div>');
- }
- });
+		 $('#x').append(prac);
+		 });
+	
  </script>
 </head>
 <body>
